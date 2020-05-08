@@ -25,7 +25,7 @@ soep <- spread_attrs(droplevels(gather_attrs(soep)))
 addmargins(table(soep$sex , soep$mar, useNA = c("always")))
 # 4. Compute the median birth year, based on the variable
 #    "ybirth".
-median(soep$ybirth)
+median(soep$ybirth, na.rm = TRUE)
 
 
 # How to submit:
