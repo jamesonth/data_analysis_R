@@ -22,7 +22,7 @@ soep <- spread_attrs(droplevels(gather_attrs(soep)))
 # 3. Produce a two-way frequency table of marital status by
 #    gender, based on the variables "sex" and "mar". Make
 #    sure the tabulation includes NAs.
-addmargins(table(soep$sex , soep$mar, useNA = c("always")))
+addmargins(table(soep$sex , soep$mar, useNA ='always')) 
 # 4. Compute the median birth year, based on the variable
 #    "ybirth".
 median(soep$ybirth, na.rm = TRUE)
