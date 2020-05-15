@@ -31,7 +31,7 @@ coppers[coppers<2] = 0
 #    their initials are L, S, and R) and store their names in 
 #    the vector physicists.
 
-physicists <- tbbt[substring(tbbt,1,1)=="L" | substring(tbbt,1,1)=="S" | substring(tbbt,1,1)=="R"]
+physicists <- tbbt[tbbt == "Leonard" | tbbt == "Sheldon" | tbbt == "Raj"]
 
 # 5. Assign names to the elements of coppers. Use the vector 
 #    tbbt as names.
