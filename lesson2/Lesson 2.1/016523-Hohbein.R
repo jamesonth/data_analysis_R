@@ -42,6 +42,8 @@ names(coppers) = tbbt
 #    Select both values at once, not each one individually.
 
 coppers[names(coppers) %in% c("Leonard","Sheldon")]
+#or
+coppers[c("Leonard","Sheldon")]
 
 # 7. Below is an example of bad coding style. Use a different
 #    function to produce the same result in a shorter and more
