@@ -19,7 +19,7 @@ coppers <- coins[coins<10]
 
 # 2. Write on line of code to determine how many coppers are 
 #    fives. 
-sum(coins==5)
+sum(coppers==5)
 
 
 # 3. Replace all elements of coppers whose value is below 2 
