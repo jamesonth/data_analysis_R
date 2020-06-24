@@ -43,7 +43,7 @@ ggss$income[
   ] <- NA
 ggss$income <- as.numeric(as.character(ggss$income))
 
-ggss$income_1k = ggss$income * 1000 # scale it by 1000
+ggss$income_1k = ggss$income / 1000 # scale it by 1000
 
 # 2b) Verify that you created income_1k correctly.
 summary(ggss$income_1k)
@@ -56,14 +56,18 @@ ggss[1:100, c("v388", "income_1k")]
 #     "low", "mid", and "high". Make sure that missing values on 
 #     income are retained.
 
-ggss$incgroup <- NA
-ggss$incgroup[ggss$income <=1000] <- "low"
-ggss$incgroup[ggss$income >1000] <- "mid"
-ggss$incgroup[ggss$income > 2000] <- "high"
-ggss$incgroup <- factor(ggss$incgroup)
+income_intervals <- c(0,1000,2000,max(ggss$income, na.rm = TRUE))
+
+ggss$incgroup <- cut(
+  ggss$income, 
+  breaks = income_intervals,
+  include.lowest = TRUE,
+  labels = c("low", "mid", "high")
+)
+rm(income_intervals)
 
 # 3b) Verify that you coded incgroup correctly.
-ggss[1:100, c("income", "incgroup")]
+ggss[100:300, c("income", "incgroup")]
 summary(ggss$incgroup)
 
 # 4a) Create a factor region, which is variable v3 translated to
