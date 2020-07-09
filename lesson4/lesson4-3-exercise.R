@@ -15,7 +15,7 @@ load("data/ex4-data.RData")
 #    for region (independent variable), and save your result 
 #    in the object model2. Then summarize model2.
 
-model2 = lm(ideology ~ income_1k + region, data=ggss)
+model2 = lm(ideology ~ income_1k + region, data=ex4dt)
 summary(model2)
 
 
@@ -33,7 +33,7 @@ summary(model2)
 #    variable), and save your result in the object 
 #    model2_cat. Then summarize model2_cat.
 
-model2_cat = lm(ideology ~ incgroup + region, data=ggss)
+model2_cat = lm(ideology ~ incgroup + region, data=ex4dt)
 summary(model2_cat)
 
 # Apparently, people with higher incomes place themselves 
@@ -52,7 +52,7 @@ summary(model2_cat)
 #    and re-run model2_cat. Save your result in the object
 #    model2_cat_alt and summarize model2_cat_alt.
 
-model2_cat_alt = lm(ideology ~ relevel(incgroup, "mid") + region, data=ggss)
+model2_cat_alt = lm(ideology ~ relevel(incgroup, "mid") + region, data=ex4dt)
 summary(model2_cat_alt)
 
 
