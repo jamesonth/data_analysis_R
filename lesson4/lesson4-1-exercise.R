@@ -64,6 +64,7 @@ ggss$incgroup <- cut(
   include.lowest = TRUE,
   labels = c("low", "mid", "high")
 )
+
 rm(income_intervals)
 
 # 3b) Verify that you coded incgroup correctly.
