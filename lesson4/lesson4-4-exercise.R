@@ -29,7 +29,7 @@ summary(model3)
 #    directly. Save your result in the object model3_alt and
 #    summarize model3_alt.
 
-model3_alt = lm(ideology ~ income_1k:region, data=ex4dt)
+model3_alt = lm(ideology ~ region + income_1k:region, data=ex4dt)
 summary(model3_alt)
 
 
