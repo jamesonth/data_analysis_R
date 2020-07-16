@@ -1,3 +1,3 @@
 # data_analysis_R
  
-One of the dumbest classes I have ever taken
+Definition of a shit class
