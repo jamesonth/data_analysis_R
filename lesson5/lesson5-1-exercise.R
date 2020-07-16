@@ -58,12 +58,30 @@ ggss$region[ggss$v3 == "ALTE BUNDESLAENDER"] <- "west"
 
 ggss$relig = NA
 ggss$relig[ggss$v526 == "NIE"] = "no"
-ggss$relig[ggss$v526 != "NIE" & ggss$v526 != "KEINE ANGABE"] = "yes"
+ggss$relig[ggss$v526 != "NIE" & ggss$v526 != "KEINE ANGABE"] = "yes" 
 ggss$relig = as.factor(ggss$relig)
 
 # 1b) Verify that you coded relig correctly.
-table(ggss$relig)
-ggss$relig[1:100]
+
+# I will use all the verification methods because it is not clear which one you are asking for. 
+
+table(ggss$relig, useNA = "always") # one table
+table(ggss$v526)# second table 
+table(ggss$v526,ggss$relig,useNA = "always") # combine the tables 
+
+ggss$relig[1:100] # first one hundred values of each
+ggss$v526[1:100] 
+
+summary(ggss$relig) #summaries 
+summary(ggss$v526)
+
+sum(is.na(ggss$relig)) # number of NA values
+sum(ggss$v526 == "KEINE ANGABE") # number of KEINE ANGABE
+
+# count the amount of value that are not what they are supposed to be 
+sum(ggss$relig[ggss$v526 == "NIE"] != "no")
+sum(ggss$relig[ggss$v526 != "NIE" & ggss$v526 != "KEINE ANGABE"] != "yes")
+
 
 # 2a) Create a data set ex5dt that contains only variables 
 #     relig, income_1k, agegroup, and region.
