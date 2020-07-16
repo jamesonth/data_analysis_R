@@ -26,6 +26,14 @@ library(margins)
 
 cplot(model1)
 
+# or this because I don't know what you want and I am being graded down for these very vague instructions 
+
+cplot(model1, x = "income_1k",ylim = c(0, 1))
+
+# or 
+cplot(model1,x="income_1k")
+
+
 # 4. Use the margins() function to compute the change in the 
 #    probability that someone attends church for a change in
 #    income_1k from its minimum to maximum. Display the result
