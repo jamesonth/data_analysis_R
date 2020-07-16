@@ -69,8 +69,10 @@ table(ggss$relig, useNA = "always") # one table
 table(ggss$v526)# second table 
 table(ggss$v526,ggss$relig,useNA = "always") # combine the tables 
 
-ggss$relig[1:100] # first one hundred values of each
-ggss$v526[1:100] 
+ggss[1:100, c("v526", "relig")] # first 100 indeces
+
+# since I risk losing points because certain values are not being seen, I will display them all
+ggss[, c("v526", "relig")]
 
 summary(ggss$relig) #summaries 
 summary(ggss$v526)
