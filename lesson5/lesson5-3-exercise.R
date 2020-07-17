@@ -73,7 +73,7 @@ reduced <- glm(
 )
 
 library(lmtest)
-waldtest(model2, reduced)
+
 lrtest(model2, reduced)
 
 # How to submit:
